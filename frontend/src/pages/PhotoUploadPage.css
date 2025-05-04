@@ -1,0 +1,253 @@
+.upload-page {
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .upload-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+  
+  .upload-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .error-message {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @media (min-width: 768px) {
+    .upload-form {
+      flex-direction: row;
+      gap: 30px;
+    }
+    
+    .upload-section {
+      flex: 1;
+    }
+    
+    .form-section {
+      flex: 1;
+    }
+  }
+  
+  .upload-dropzone {
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9fafb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .upload-dropzone:hover {
+    border-color: #3897f0;
+    background-color: #f0f7ff;
+  }
+  
+  .file-input {
+    display: none;
+  }
+  
+  .upload-icon {
+    font-size: 48px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+  }
+  
+  .upload-dropzone h3 {
+    margin: 0 0 10px;
+    color: #4b5563;
+  }
+  
+  .upload-dropzone p {
+    margin: 5px 0;
+    color: #6b7280;
+    font-size: 14px;
+  }
+  
+  .preview-container {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f3f4f6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .preview-image {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0 auto;
+  }
+  
+  .clear-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clear-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #3897f0;
+    box-shadow: 0 0 0 2px rgba(56, 151, 240, 0.2);
+  }
+  
+  .form-group input:disabled,
+  .form-group textarea:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .progress-container {
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    height: 10px;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #3897f0;
+    transition: width 0.3s ease;
+  }
+  
+  .progress-text {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: right;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  
+  .button svg {
+    margin-right: 6px;
+  }
+  
+  .button-primary {
+    background-color: #3897f0;
+    color: white;
+  }
+  
+  .button-primary:hover:not(:disabled) {
+    background-color: #1877f2;
+  }
+  
+  .button-secondary {
+    background-color: #f3f4f6;
+    color: #4b5563;
+  }
+  
+  .button-secondary:hover:not(:disabled) {
+    background-color: #e5e7eb;
+  }
+  
+  .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 480px) {
+    .upload-container {
+      padding: 20px 15px;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .button {
+      width: 100%;
+    }
+  }
+  

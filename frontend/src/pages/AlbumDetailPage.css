@@ -1,0 +1,443 @@
+.album-detail-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Заголовок и мета-информация альбома */
+  .album-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+  }
+  
+  .album-title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .album-title {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text, #333);
+    flex: 1;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .private-indicator {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--color-secondary, #757575);
+  }
+  
+  .private-indicator svg {
+    margin-right: 0.25rem;
+  }
+  
+  .album-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .album-meta {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--color-secondary, #757575);
+    font-size: 0.95rem;
+  }
+  
+  .album-owner a {
+    color: var(--color-primary, #3897f0);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .album-owner a:hover {
+    text-decoration: underline;
+  }
+  
+  .album-description {
+    color: var(--color-text, #333);
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+  
+  /* Раздел с фотографиями */
+  .album-content {
+    margin-top: 2rem;
+  }
+  
+  .photos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .photos-title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--color-text, #333);
+  }
+  
+  /* Сетка фотографий */
+  .album-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .photo-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--bg-primary, white);
+  }
+  
+  .photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .photo-link {
+    display: block;
+    color: var(--color-text, #333);
+    text-decoration: none;
+  }
+  
+  .photo-image-container {
+    position: relative;
+    padding-top: 75%; /* Соотношение сторон 4:3 */
+    overflow: hidden;
+  }
+  
+  .photo-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .photo-info {
+    padding: 1rem;
+  }
+  
+  .photo-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .photo-description {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-secondary, #757575);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Ограничение в 2 строки */
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Пустой альбом */
+  .empty-album {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: var(--bg-secondary, #f8f9fa);
+    border-radius: 8px;
+  }
+  
+  .empty-album-content {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .empty-album-icon {
+    font-size: 3rem;
+    color: var(--color-secondary, #757575);
+    margin-bottom: 1rem;
+  }
+  
+  .empty-album p {
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary, #757575);
+  }
+  
+  /* Модальное окно удаления */
+  .delete-modal-content {
+    padding: 0.5rem 0;
+  }
+  
+  .delete-modal-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+  }
+  
+  /* Кнопки */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+    text-decoration: none;
+  }
+  
+  .button svg {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .button-primary {
+    background-color: var(--color-primary, #3897f0);
+    color: white;
+  }
+  
+  .button-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-dark, #1877f2);
+  }
+  
+  .button-secondary {
+    background-color: var(--bg-secondary, #f0f0f0);
+    color: var(--color-text, #333);
+  }
+  
+  .button-secondary:hover:not(:disabled) {
+    background-color: var(--bg-secondary-dark, #e0e0e0);
+  }
+  
+  .button-edit {
+    background-color: var(--color-edit, #4caf50);
+    color: white;
+  }
+  
+  .button-edit:hover:not(:disabled) {
+    background-color: var(--color-edit-dark, #388e3c);
+  }
+  
+  .button-delete {
+    background-color: var(--color-danger, #f44336);
+    color: white;
+  }
+  
+  .button-delete:hover:not(:disabled) {
+    background-color: var(--color-danger-dark, #d32f2f);
+  }
+  
+  .button-add {
+    background-color: var(--color-primary, #3897f0);
+    color: white;
+  }
+  
+  .button-add:hover:not(:disabled) {
+    background-color: var(--color-primary-dark, #1877f2);
+  }
+  
+  .button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Компоненты загрузки и ошибки */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    color: var(--color-secondary, #757575);
+  }
+  
+  .loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--color-primary, #3897f0);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .error-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--bg-primary, white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .error-container h2 {
+    color: var(--color-danger, #f44336);
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .error-container p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text, #333);
+  }
+  
+  /* Адаптивный дизайн */
+  @media (max-width: 768px) {
+    .album-title-section {
+      flex-direction: column;
+    }
+    
+    .album-title {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+    
+    .album-actions {
+      width: 100%;
+    }
+    
+    .album-photos-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    
+    .modal-actions {
+      flex-direction: column;
+    }
+    
+    .modal-actions .button {
+      width: 100%;
+    }
+  }
+  
+  /* Темная тема */
+  .dark-theme .album-header {
+    border-color: #444;
+  }
+  
+  .dark-theme .album-title {
+    color: #f0f0f0;
+  }
+  
+  .dark-theme .album-description {
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .photos-title {
+    color: #f0f0f0;
+  }
+  
+  .dark-theme .photo-item {
+    background-color: #2a2a2a;
+  }
+  
+  .dark-theme .photo-title {
+    color: #f0f0f0;
+  }
+  
+  .dark-theme .empty-album {
+    background-color: #2a2a2a;
+  }
+  
+  .dark-theme .button-secondary {
+    background-color: #444;
+    color: #f0f0f0;
+  }
+  
+  .dark-theme .button-secondary:hover:not(:disabled) {
+    background-color: #555;
+  }
+  
+  /* Стили для кнопки удаления фотографии из альбома */
+.photo-item {
+    position: relative;
+  }
+  
+  .remove-photo-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    z-index: 2;
+  }
+  
+  .photo-item:hover .remove-photo-button {
+    opacity: 1;
+  }
+  
+  .remove-photo-button:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+  
+  /* Стили для модального окна удаления фотографии */
+  .remove-photo-modal-content {
+    padding: 0.5rem 0;
+  }
+  
+  .remove-photo-modal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .remove-photo-modal-content .note {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* Стили для мобильных устройств */
+  @media (max-width: 768px) {
+    .remove-photo-button {
+      opacity: 1; /* Всегда видима на мобильных устройствах */
+      top: 5px;
+      right: 5px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  

@@ -1,0 +1,223 @@
+.album-form-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.album-form-container {
+  background-color: var(--bg-primary, white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.form-title {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary, #333);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.album-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-text, #333);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--input-bg, white);
+  color: var(--color-text, #333);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-primary, #3897f0);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 151, 240, 0.2);
+}
+
+.form-input:disabled,
+.form-textarea:disabled {
+  background-color: var(--disabled-bg, #f5f5f5);
+  cursor: not-allowed;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.checkbox-group {
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: 0.75rem;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-weight: 500;
+}
+
+.help-text {
+  margin: 0.25rem 0 0 1.75rem;
+  color: var(--color-secondary, #666);
+  font-size: 0.85rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button svg {
+  margin-right: 0.5rem;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button-primary {
+  background-color: var(--color-primary, #3897f0);
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-dark, #1877f2);
+}
+
+.button-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button-secondary {
+  background-color: var(--bg-secondary, #f0f0f0);
+  color: var(--color-text, #333);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: var(--bg-secondary-dark, #e0e0e0);
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--color-secondary, #666);
+  font-size: 1rem;
+}
+
+/* Темная тема */
+.dark-theme .album-form-container {
+  background-color: #2a2a2a;
+}
+
+.dark-theme .form-title {
+  color: #f0f0f0;
+}
+
+.dark-theme .form-input,
+.dark-theme .form-textarea {
+  background-color: #333;
+  border-color: #444;
+  color: #f0f0f0;
+}
+
+.dark-theme .form-input:disabled,
+.dark-theme .form-textarea:disabled {
+  background-color: #3a3a3a;
+}
+
+.dark-theme .checkbox-label {
+  color: #e0e0e0;
+}
+
+.dark-theme .help-text {
+  color: #aaa;
+}
+
+.dark-theme .button-secondary {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+.dark-theme .button-secondary:hover:not(:disabled) {
+  background-color: #555;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .album-form-container {
+    padding: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .button {
+    width: 100%;
+  }
+}

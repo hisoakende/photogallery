@@ -1,0 +1,151 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 64px);
+    padding: 20px;
+  }
+  
+  .register-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .register-title {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .error-alert {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 18px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-input:focus {
+    border-color: #3897f0;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(56, 151, 240, 0.2);
+  }
+  
+  .form-hint {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .register-button {
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .register-button:hover:not(:disabled) {
+    background-color: #1877f2;
+  }
+  
+  .register-button:disabled {
+    background-color: #b3dffc;
+    cursor: not-allowed;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 16px;
+    color: #666;
+  }
+  
+  .login-link a {
+    color: #3897f0;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Адаптация для темной темы */
+  .dark-theme .register-card {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  .dark-theme .register-title {
+    color: #f0f0f0;
+  }
+  
+  .dark-theme .form-group label {
+    color: #d0d0d0;
+  }
+  
+  .dark-theme .form-input {
+    background-color: #333;
+    border-color: #444;
+    color: #f0f0f0;
+  }
+  
+  .dark-theme .form-hint {
+    color: #b0b0b0;
+  }
+  
+  .dark-theme .login-link {
+    color: #b0b0b0;
+  }
+  
+  .dark-theme .login-link a {
+    color: #63b3fd;
+  }
+  
+  /* Анимации */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .register-card {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
