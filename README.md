@@ -32,3 +32,10 @@
 ### Инфраструктура
 - Docker
 - Docker Compose
+
+###
+Запустить:
+```
+docker-compose build && docker-compose up
+```
+
